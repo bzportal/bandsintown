@@ -261,7 +261,6 @@ module Bandsintown
         event.venue            = Bandsintown::Venue.build_from_json(json_hash["venue"])
         event.artists          = json_hash["artists"].map { |artist| Bandsintown::Artist.new(artist.symbolize_keys) }
       end
-      event
     end
 
     
