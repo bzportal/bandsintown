@@ -58,16 +58,15 @@ module Bandsintown
     end
      
     def self.build_from_json(args={})
-      Bandsintown::Venue.new(args['id']) do |v|
-        v.name            = args["name"]
-        v.bandsintown_url = args["url"]
-        v.bandsintown_id  = args["id"]
-        v.region          = args["region"]
-        v.city            = args["city"]
-        v.country         = args["country"]
-        v.latitude        = args["latitude"]
-        v.longitude       = args["longitude"]
-      end
+      v = Bandsintown::Venue.new(args['id'])
+      v.name            = args["name"]
+      v.bandsintown_url = args["url"]
+      v.bandsintown_id  = args["id"]
+      v.region          = args["region"]
+      v.city            = args["city"]
+      v.country         = args["country"]
+      v.latitude        = args["latitude"]
+      v.longitude       = args["longitude"]
     end    
   end
 end

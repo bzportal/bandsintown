@@ -126,12 +126,11 @@ module Bandsintown
     end
     
     def self.build_from_json(json_hash)
-      Bandsintown::Artist.new({}) do |artist|
-        artist.name = json_hash['name']
-        artist.mbid = json_hash['mbid']
-        artist.bandsintown_url = json_hash['url']
-        artist.upcoming_events_count = json_hash['upcoming_events_count']
-      end
+      artist = Bandsintown::Artist.new
+      artist.name = json_hash['name']
+      artist.mbid = json_hash['mbid']
+      artist.bandsintown_url = json_hash['url']
+      artist.upcoming_events_count = json_hash['upcoming_events_count']
     end
     
     def self.resource_path
