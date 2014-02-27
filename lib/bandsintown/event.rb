@@ -260,6 +260,9 @@ module Bandsintown
       event.on_sale_datetime = Time.parse(json_hash["on_sale_datetime"]) rescue nil
       event.venue            = Bandsintown::Venue.build_from_json(json_hash["venue"])
       event.artists          = json_hash["artists"].map { |artist| Bandsintown::Artist.new(artist.symbolize_keys) }
+      puts event.inspect
+      return event
+
     end
   end
 end
