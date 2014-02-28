@@ -1,7 +1,7 @@
 module Bandsintown
   class Artist < Base
     
-    attr_accessor :name, :mbid, :events, :upcoming_events_count
+    attr_accessor :name, :mbid, :image_url, :events, :upcoming_events_count
     
     def initialize(options = {})
       @name = options[:name]
@@ -129,6 +129,7 @@ module Bandsintown
       artist = Bandsintown::Artist.new
       artist.name = json_hash['name']
       artist.mbid = json_hash['mbid']
+      artist.image_url = json_hash['image_url']
       artist.bandsintown_url = json_hash['url']
       artist.upcoming_events_count = json_hash['upcoming_events_count']
     end
