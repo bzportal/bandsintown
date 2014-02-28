@@ -6,6 +6,7 @@ module Bandsintown
     def initialize(options = {})
       @name = options[:name]
       @mbid = options[:mbid]
+      @image_url = options[:image_url]
       @bandsintown_url = options[:url] || build_bandsintown_url
     end
     

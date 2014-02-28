@@ -3,7 +3,7 @@ module Bandsintown
     
     # Module with helper methods for formatting Bandsintown::Event.create params
     module CreationHelpers
-      ISO_8601_FORMAT = "%Y-%m-%dT%H:%M:%S"
+      ISO_8601_FORMAT = "%Y-%m-%dT%H:%M"
       
       def self.included(klass)
         klass.extend(ClassMethods)
