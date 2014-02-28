@@ -6,8 +6,7 @@ module Bandsintown
     def initialize(options = {})
       @name = options[:name]
       @mbid = options[:mbid]
-      @bandsintown_url = options[:url] || build_bandsintown_url
-      @image_url = @bandsintown_url + "/photo/medium.jpg"
+      @image_url = options[:image_url]
     end
     
     #Returns an array of Bandsintown::Event objects for each of the artist's upcoming events available through bandsintown.com.
@@ -130,7 +129,7 @@ module Bandsintown
       artist = Bandsintown::Artist.new
       artist.name = json_hash['name']
       artist.mbid = json_hash['mbid']
-      artist.bandsintown_url = json_hash['url']
+      artist.image_url = json_hash['image_url']
       artist.upcoming_events_count = json_hash['upcoming_events_count']
       return artist
     end
