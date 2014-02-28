@@ -6,7 +6,8 @@ module Bandsintown
     def initialize(options = {})
       @name = options[:name]
       @mbid = options[:mbid]
-      @image_url = options[:image_url]
+      @bandsintown_url = build_bandsintown_url
+      @image_url = @bandsintown_url + "/photo/medium.jpg" unless @bandsintown_url.nil?
     end
     
     #Returns an array of Bandsintown::Event objects for each of the artist's upcoming events available through bandsintown.com.
@@ -149,8 +150,6 @@ module Bandsintown
         name.gsub!('/', CGI.escape('/'))
         name.gsub!('?', CGI.escape('?'))
         "http://www.bandsintown.com/#{URI.escape(name)}"
-      else
-        "http://www.bandsintown.com/mbid_#{@mbid}"
       end
     end
     
