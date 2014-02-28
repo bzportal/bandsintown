@@ -6,9 +6,8 @@ module Bandsintown
     def initialize(options = {})
       @name = options[:name]
       @mbid = options[:mbid]
-      Rails.logger.debug options.inspect
-      @image_url = options[:image_url]
       @bandsintown_url = options[:url] || build_bandsintown_url
+      @image_url = @bandsintown_url + "/photo/medium.jpg"
     end
     
     #Returns an array of Bandsintown::Event objects for each of the artist's upcoming events available through bandsintown.com.
