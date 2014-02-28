@@ -57,7 +57,7 @@ module Bandsintown
     
     include CreationHelpers
     
-    attr_accessor :bandsintown_id, :datetime, :ticket_url, :artists, :venue, :status, :ticket_status, :on_sale_datetime
+    attr_accessor :bandsintown_id, :datetime, :ticket_url, :artists, :venue, :status, :ticket_status, :on_sale_datetime, :title, :description, :ticket_url
     
     def tickets_available?
       ticket_status == "available"
