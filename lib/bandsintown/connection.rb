@@ -7,7 +7,6 @@ module Bandsintown
     end
     
     def get(resource_path, method_path, params = {})
-      params[:api_version] = '2.0'
       request_url = File.join([@base_url, resource_path, method_path].reject(&:blank?)) + "?" + encode(params.symbolize_keys)
       begin
         RestClient.get(request_url)
@@ -37,6 +36,7 @@ module Bandsintown
       end
       args[:format] = "json"
       args[:app_id] = Bandsintown.app_id
+      args[:api_version] = '2.0'
       args.to_param
     end
     

@@ -126,7 +126,7 @@ module Bandsintown
       request_url = Bandsintown::Artist.new(options).api_name
       build_from_json(request_and_parse(:get, request_url))
     end
-    
+
     def self.build_from_json(json_hash)
       artist = Bandsintown::Artist.new
       artist.name = json_hash['name']
@@ -134,12 +134,13 @@ module Bandsintown
       artist.image_url = json_hash['image_url']
       artist.bandsintown_url = json_hash['url']
       artist.upcoming_events_count = json_hash['upcoming_events_count']
+      return artist
     end
-    
+
     def self.resource_path
       "artists"
     end
-    
+
     private
     
     def build_bandsintown_url
