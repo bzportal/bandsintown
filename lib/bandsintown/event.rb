@@ -254,8 +254,8 @@ module Bandsintown
       event.bandsintown_id   = json_hash["id"]
       event.bandsintown_url  = json_hash["url"]
       event.datetime         = Time.parse(json_hash["datetime"])
-      event.title            = Time.parse(json_hash["title"])
-      event.description      = Time.parse(json_hash["description"])
+      event.title            = json_hash["title"]
+      event.description      = json_hash["description"]
       event.ticket_url       = json_hash["ticket_url"]
       event.status           = json_hash["status"]
       event.ticket_status    = json_hash["ticket_status"]
