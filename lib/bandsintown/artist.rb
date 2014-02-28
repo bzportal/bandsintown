@@ -130,7 +130,6 @@ module Bandsintown
       artist = Bandsintown::Artist.new
       artist.name = json_hash['name']
       artist.mbid = json_hash['mbid']
-      artist.image_url = json_hash['url'] + "/photo/medium.jpg"
       artist.bandsintown_url = json_hash['url']
       artist.upcoming_events_count = json_hash['upcoming_events_count']
       return artist
